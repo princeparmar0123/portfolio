@@ -111,7 +111,7 @@ export function Hero() {
             />
           </a>
           <a
-            href="/resume.pdf"
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
             download
             className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-strong text-white font-medium hover:bg-white/10 transition-all"
           >
