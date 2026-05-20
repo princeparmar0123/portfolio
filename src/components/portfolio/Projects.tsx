@@ -9,6 +9,8 @@ const projects = [
     description:
       "Friends-first social app where the default feed shows only posts from people you know. Hyperlocal discovery for city-wise posts and communities, with reactions, stories, and in-app purchases.",
     gradient: "from-fuchsia-500/30 to-purple-500/30",
+    imageUrl:
+      "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?auto=format&fit=crop&w=1600&q=80",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.biztoso.app&hl=en_IN",
   },
@@ -18,6 +20,8 @@ const projects = [
     description:
       "Event ticketing platform where admins create and publish events, attendees browse and purchase tickets in-app, and organizers track sales, payouts, and transaction history in one place.",
     gradient: "from-rose-500/30 to-indigo-500/30",
+    imageUrl:
+      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80",
   },
   {
     title: "Anavasi mapp",
@@ -25,6 +29,8 @@ const projects = [
     description:
       "Offline topo map viewer for Greece hiking and touring routes. GPS positioning without network, custom waypoints with photos, difficulty-coded trails, and emergency SMS with live coordinates.",
     gradient: "from-emerald-500/30 to-teal-500/30",
+    imageUrl:
+      "https://images.unsplash.com/photo-1464822759844-d150ad6d1b35?auto=format&fit=crop&w=1600&q=80",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=gr.anavasieditions.pavla.anavasimapp&hl=en",
   },
@@ -34,6 +40,8 @@ const projects = [
     description:
       "Agricultural marketplace helping farmers order certified pesticides, fertilizers, and growth products from verified suppliers—with secure checkout, delivery tracking, and multilingual support.",
     gradient: "from-lime-500/30 to-green-500/30",
+    imageUrl:
+      "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.agriorganic&hl=en",
   },
@@ -43,6 +51,8 @@ const projects = [
     description:
       "Vehicle service platform connecting drivers with verified mechanics. Live service updates with photos, transparent pricing, genuine spare parts, and doorstep pickup and drop for cars and bikes.",
     gradient: "from-orange-500/30 to-amber-500/30",
+    imageUrl:
+      "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=80",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.kswiftservice&hl=en",
   },
@@ -53,6 +63,8 @@ const projects = [
     description:
       "Self-drive car rental platform for Ahmedabad. Smart filters, doorstep delivery and pickup, seamless UPI and card payments, trip scheduling, and 24/7 support for renters and car hosts.",
     gradient: "from-violet-500/30 to-blue-500/30",
+    imageUrl:
+      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.freedomride&hl=en_IN",
   },
@@ -78,15 +90,23 @@ export function Projects() {
               transition={{ delay: i * 0.1 }}
               className="group relative rounded-3xl overflow-hidden glass-strong hover:bg-white/[0.06] transition-all"
             >
-              {/* Image placeholder */}
               <div
                 className={`relative aspect-[16/9] overflow-hidden bg-gradient-to-br ${p.gradient}`}
               >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="font-display text-6xl font-bold text-white/15 group-hover:scale-110 transition-transform duration-700">
-                    {p.title.charAt(0)}
+                {"imageUrl" in p && p.imageUrl ? (
+                  <img
+                    src={p.imageUrl}
+                    alt={p.title}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="font-display text-6xl font-bold text-white/15 group-hover:scale-110 transition-transform duration-700">
+                      {p.title.charAt(0)}
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050816] via-transparent to-transparent" />
                 <div
                   className="absolute inset-0 opacity-[0.15]"

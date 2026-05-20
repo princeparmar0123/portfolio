@@ -16,7 +16,7 @@ const experience = [
   {
     company: "Saturncube Technology",
     role: "Mobile App Developer",
-    duration: "Oct 2024 – Oct 2025",
+    duration: "Nov 2024 – Oct 2025",
     points: [
       "Built scalable Flutter applications.",
       "Integrated Firebase, payment gateways, and real-time features.",

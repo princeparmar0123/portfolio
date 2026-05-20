@@ -5,6 +5,7 @@ const skills = [
   "Flutter", "Dart", "Kotlin", "Jetpack Compose", "Java", "Firebase", "REST APIs",
   "Socket.io", "Clean Architecture", "MVVM", "Android", "CI/CD",
   "GitHub", "PostgreSQL", "MongoDB", "Payment Gateway", "Razorpay", "Flutterwave",
+  "AI", "AI Chatbot",
 ];
 
 export function Skills() {
