@@ -21,7 +21,7 @@ export function Services() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="What I Do"
-          title="Services I offer"
+          title="What I can do for you"
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((s, i) => (

@@ -5,7 +5,7 @@ import { SectionHeading } from "./SectionHeading";
 const experience = [
   {
     company: "Biztoso Technology Private Limited",
-    role: "Android Developer",
+    role: "Mobile App Developer",
     duration: "Oct 2025 – Present",
     points: [
       "Developed scalable Android applications using Kotlin and MVVM.",

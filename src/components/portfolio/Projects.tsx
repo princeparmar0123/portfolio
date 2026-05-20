@@ -1,33 +1,62 @@
 import { motion } from "motion/react";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Smartphone } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 
 const projects = [
   {
-    title: "Drive Now",
-    tech: ["Flutter", "Razorpay"],
+    title: "Biztoso: Friends & Local",
+    tech: ["Kotlin", "Firebase", "Real-time Chat"],
     description:
-      "Booking and trip management application with secure payment integration.",
-    gradient: "from-violet-500/30 to-blue-500/30",
-  },
-  {
-    title: "Figtion App",
-    tech: ["Flutter", "Unity", "REST APIs"],
-    description: "Integrated Unity modules and secure API communication.",
+      "Friends-first social app where the default feed shows only posts from people you know. Hyperlocal discovery for city-wise posts and communities, with reactions, stories, and in-app purchases.",
     gradient: "from-fuchsia-500/30 to-purple-500/30",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.biztoso.app&hl=en_IN",
   },
   {
-    title: "Enterprise Chat App",
-    tech: ["Flutter", "Firebase", "Socket.io"],
-    description: "Real-time communication and enterprise chat system.",
-    gradient: "from-cyan-500/30 to-blue-500/30",
+    title: "Event Elite",
+    tech: ["Kotlin", "Stripe"],
+    description:
+      "Event ticketing platform where admins create and publish events, attendees browse and purchase tickets in-app, and organizers track sales, payouts, and transaction history in one place.",
+    gradient: "from-rose-500/30 to-indigo-500/30",
   },
   {
-    title: "Athlete Gate",
-    tech: ["Flutter", "Firebase"],
-    description: "Sports booking and management platform.",
-    gradient: "from-emerald-500/30 to-cyan-500/30",
+    title: "Anavasi mapp",
+    tech: ["Flutter", "GPS", "In-App Purchase"],
+    description:
+      "Offline topo map viewer for Greece hiking and touring routes. GPS positioning without network, custom waypoints with photos, difficulty-coded trails, and emergency SMS with live coordinates.",
+    gradient: "from-emerald-500/30 to-teal-500/30",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=gr.anavasieditions.pavla.anavasimapp&hl=en",
   },
+  {
+    title: "Agri Tech Solution",
+    tech: ["Flutter", "REST APIs", "Payments"],
+    description:
+      "Agricultural marketplace helping farmers order certified pesticides, fertilizers, and growth products from verified suppliers—with secure checkout, delivery tracking, and multilingual support.",
+    gradient: "from-lime-500/30 to-green-500/30",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.agriorganic&hl=en",
+  },
+  {
+    title: "Kswift Services",
+    tech: ["Flutter", "Firebase", "Real-time Tracking"],
+    description:
+      "Vehicle service platform connecting drivers with verified mechanics. Live service updates with photos, transparent pricing, genuine spare parts, and doorstep pickup and drop for cars and bikes.",
+    gradient: "from-orange-500/30 to-amber-500/30",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.kswiftservice&hl=en",
+  },
+
+  {
+    title: "Drive Now",
+    tech: ["Flutter", "Razorpay", "UPI"],
+    description:
+      "Self-drive car rental platform for Ahmedabad. Smart filters, doorstep delivery and pickup, seamless UPI and card payments, trip scheduling, and 24/7 support for renters and car hosts.",
+    gradient: "from-violet-500/30 to-blue-500/30",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.freedomride&hl=en_IN",
+  },
+ 
 ];
 
 export function Projects() {
@@ -88,18 +117,31 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-1.5 text-sm text-white hover:text-gradient transition-colors"
-                  >
-                    <ExternalLink size={14} /> Live Demo
-                  </a>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-1.5 text-sm text-white hover:text-gradient transition-colors"
-                  >
-                    <Github size={14} /> GitHub
-                  </a>
+                  {"playStoreUrl" in p && p.playStoreUrl ? (
+                    <a
+                      href={p.playStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-white hover:text-gradient transition-colors"
+                    >
+                      <Smartphone size={14} /> Google Play
+                    </a>
+                  ) : (
+                    <>
+                      <a
+                        href="#"
+                        className="inline-flex items-center gap-1.5 text-sm text-white hover:text-gradient transition-colors"
+                      >
+                        <ExternalLink size={14} /> Live Demo
+                      </a>
+                      <a
+                        href="#"
+                        className="inline-flex items-center gap-1.5 text-sm text-white hover:text-gradient transition-colors"
+                      >
+                        <Github size={14} /> GitHub
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
 

@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { SectionHeading } from "./SectionHeading";
 
 const skills = [
-  "Flutter", "Dart", "Kotlin", "Java", "Firebase", "REST APIs",
+  "Flutter", "Dart", "Kotlin", "Jetpack Compose", "Java", "Firebase", "REST APIs",
   "Socket.io", "Clean Architecture", "MVVM", "Android", "CI/CD",
   "GitHub", "PostgreSQL", "MongoDB", "Payment Gateway", "Razorpay", "Flutterwave",
 ];
