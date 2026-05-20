@@ -181,7 +181,7 @@ export function Contact() {
               rows={5}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Tell me about your project..."
+              placeholder="Job Description"
               className="w-full bg-white/5 border border-white/10 focus:border-[oklch(0.65_0.22_290)] outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-muted-foreground resize-none transition-colors"
             />
             {status === "error" && errorText ? (

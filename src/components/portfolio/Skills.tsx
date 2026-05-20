@@ -28,8 +28,8 @@ export function Skills() {
               whileHover={{ y: -4, scale: 1.05 }}
               className="group relative"
             >
-              <div className="absolute -inset-0.5 bg-gradient-primary rounded-xl opacity-0 group-hover:opacity-100 blur transition-opacity" />
-              <div className="relative px-5 py-2.5 glass rounded-xl text-sm font-medium text-white/85 group-hover:text-white">
+              <div className="absolute inset-0 rounded-xl bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity" />
+              <div className="relative px-5 py-2.5 glass rounded-xl border border-white/10 group-hover:border-[oklch(0.7_0.18_290/0.45)] bg-white/[0.02] group-hover:bg-white/[0.06] text-sm font-medium text-white/85 group-hover:text-white transition-colors">
                 {s}
               </div>
             </motion.div>

@@ -89,7 +89,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="mt-8 mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
         >
-          Flutter Developer with{" "}
+          Mobile App Developer with{" "}
           <span className="text-white font-semibold">4+ years</span> of
           experience building scalable enterprise and startup applications.
         </motion.p>
@@ -98,7 +98,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center flex-wrap"
         >
           <a
             href="#projects"
@@ -117,6 +117,14 @@ export function Hero() {
           >
             <Download size={18} />
             Download Resume
+          </a>
+          <a
+            href={`${import.meta.env.BASE_URL}portfolio.pdf`}
+            download
+            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-strong text-white font-medium hover:bg-white/10 transition-all"
+          >
+            <Download size={18} />
+            Download Portfolio
           </a>
         </motion.div>
       </div>
