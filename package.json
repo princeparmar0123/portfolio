@@ -8,7 +8,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "build:gh-pages": "GH_PAGES=1 vite build",
-    "postbuild:gh-pages": "cp dist/client/index.html dist/client/404.html && test -f resume.pdf && cp resume.pdf dist/client/ || true",
+    "postbuild:gh-pages": "cp dist/client/index.html dist/client/404.html && test -f resume.pdf && cp resume.pdf dist/client/ || true && test -f portfolio.pdf && cp portfolio.pdf dist/client/ || true",
     "deploy": "npm run build:gh-pages && npm run postbuild:gh-pages && gh-pages -d dist/client",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
