@@ -12,7 +12,7 @@ const projects = [
     imageUrl:
       "https://images.unsplash.com/photo-1611606063065-ee7946f0787a?auto=format&fit=crop&w=1600&q=80",
     playStoreUrl:
-      "https://play.google.com/store/apps/details?id=com.biztoso.app&hl=en_IN",
+      "https://play.google.com/store/apps/details?id=com.biztoso.app",
   },
   {
     title: "Event Elite",
