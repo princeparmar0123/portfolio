@@ -5,6 +5,35 @@ import { SectionHeading } from "./SectionHeading";
 
 const WEB3FORMS_URL = "https://api.web3forms.com/submit";
 
+const contacts = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "princeparmar0234@gmail.com",
+    href: "mailto:princeparmar0234@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 9016455487",
+    href: "tel:+919016455487",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "@princeparmar0123",
+    href: "https://github.com/princeparmar0123",
+    external: true,
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "prince-p",
+    href: "https://linkedin.com/in/prince-p-8a8505229",
+    external: true,
+  },
+];
+
 export function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -17,12 +46,14 @@ export function Contact() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const accessKey = "b592b2f3-81ad-4060-bc17-c0e6617e5aab";
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as
+      | string
+      | undefined;
 
     if (!accessKey?.trim()) {
       setStatus("error");
       setErrorText(
-        "Add VITE_WEB3FORMS_ACCESS_KEY to your .env file (see .env.example). Get a free key at web3forms.com.",
+        "Contact form is not configured. Email me directly at princeparmar0234@gmail.com.",
       );
       return;
     }
@@ -69,94 +100,57 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-28 px-6">
+    <section id="contact" className="section-alt py-20 sm:py-28 px-5 sm:px-6">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
-          eyebrow="Get in touch"
-          title="Let's build something great"
-          subtitle="Open to full-time roles and exciting product opportunities."
+          eyebrow="Contact"
+          title="Let's work together"
+          subtitle="Open to full-time roles and product-focused opportunities."
         />
-        <div className="grid lg:grid-cols-5 gap-6">
+        <div className="grid gap-6 lg:grid-cols-5">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            className="lg:col-span-2 glass-strong rounded-3xl p-7 flex flex-col gap-4 relative overflow-hidden"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            className="flex flex-col gap-3 lg:col-span-2"
           >
-            <div className="absolute -bottom-24 -left-24 size-72 bg-[oklch(0.5_0.25_240)] rounded-full blur-3xl opacity-25" />
-            <a
-              href="mailto:princeparmar0234@gmail.com"
-              className="relative group flex items-center gap-3 p-4 rounded-xl glass hover:bg-white/[0.06] transition-colors"
-            >
-              <div className="size-10 rounded-lg bg-gradient-primary flex items-center justify-center glow-purple">
-                <Mail size={18} className="text-white" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs text-muted-foreground">Email</div>
-                <div className="text-sm text-white truncate">
-                  princeparmar0234@gmail.com
+            {contacts.map((c) => (
+              <a
+                key={c.label}
+                href={c.href}
+                target={c.external ? "_blank" : undefined}
+                rel={c.external ? "noopener noreferrer" : undefined}
+                className="card-surface flex items-center gap-4 p-4 transition-colors hover:bg-muted/50"
+              >
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent">
+                  <c.icon size={18} className="text-primary" />
                 </div>
-              </div>
-            </a>
-            <a
-              href="tel:+919016455487"
-              className="relative group flex items-center gap-3 p-4 rounded-xl glass hover:bg-white/[0.06] transition-colors"
-            >
-              <div className="size-10 rounded-lg bg-gradient-primary flex items-center justify-center glow-purple">
-                <Phone size={18} className="text-white" />
-              </div>
-              <div className="min-w-0">
-                <div className="text-xs text-muted-foreground">Phone</div>
-                <div className="text-sm text-white truncate">
-                  +91 9016455487
+                <div className="min-w-0">
+                  <div className="text-xs text-muted-foreground">{c.label}</div>
+                  <div className="truncate text-sm font-medium text-foreground">
+                    {c.value}
+                  </div>
                 </div>
-              </div>
-            </a>
-            <a
-              href="https://github.com/princeparmar0123"
-              target="_blank"
-              rel="noreferrer"
-              className="relative flex items-center gap-3 p-4 rounded-xl glass hover:bg-white/[0.06] transition-colors"
-            >
-              <div className="size-10 rounded-lg bg-gradient-primary flex items-center justify-center glow-purple">
-                <Github size={18} className="text-white" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">GitHub</div>
-                <div className="text-sm text-white">@princeparmar0123</div>
-              </div>
-            </a>
-            <a
-              href="https://linkedin.com/in/prince-p-8a8505229"
-              target="_blank"
-              rel="noreferrer"
-              className="relative flex items-center gap-3 p-4 rounded-xl glass hover:bg-white/[0.06] transition-colors"
-            >
-              <div className="size-10 rounded-lg bg-gradient-primary flex items-center justify-center glow-purple">
-                <Linkedin size={18} className="text-white" />
-              </div>
-              <div>
-                <div className="text-xs text-muted-foreground">LinkedIn</div>
-                <div className="text-sm text-white">prince-p</div>
-              </div>
-            </a>
+              </a>
+            ))}
           </motion.div>
 
           <motion.form
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ delay: 0.08 }}
             onSubmit={handleSubmit}
-            className="lg:col-span-3 glass-strong rounded-3xl p-7 space-y-4"
+            className="card-surface space-y-4 p-6 lg:col-span-3"
           >
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               <input
                 required
                 name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
-                className="bg-white/5 border border-white/10 focus:border-[oklch(0.65_0.22_290)] outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-muted-foreground transition-colors"
+                className="input-field"
               />
               <input
                 required
@@ -165,7 +159,7 @@ export function Contact() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
-                className="bg-white/5 border border-white/10 focus:border-[oklch(0.65_0.22_290)] outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-muted-foreground transition-colors"
+                className="input-field"
               />
             </div>
             <input
@@ -173,7 +167,7 @@ export function Contact() {
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
               placeholder="Subject"
-              className="w-full bg-white/5 border border-white/10 focus:border-[oklch(0.65_0.22_290)] outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-muted-foreground transition-colors"
+              className="input-field"
             />
             <textarea
               required
@@ -181,28 +175,25 @@ export function Contact() {
               rows={5}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Job Description"
-              className="w-full bg-white/5 border border-white/10 focus:border-[oklch(0.65_0.22_290)] outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-muted-foreground resize-none transition-colors"
+              placeholder="Tell me about the role or project…"
+              className="input-field resize-none"
             />
             {status === "error" && errorText ? (
-              <p className="text-sm text-red-400/90" role="alert">
+              <p className="text-sm text-destructive" role="alert">
                 {errorText}
               </p>
             ) : null}
             <button
               type="submit"
               disabled={status === "sending"}
-              className="group w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-primary text-white font-medium glow-purple hover:scale-[1.02] transition-transform disabled:opacity-60 disabled:pointer-events-none disabled:hover:scale-100"
+              className="btn-primary w-full disabled:opacity-60"
             >
               {status === "success"
-                ? "Message sent!"
+                ? "Message sent"
                 : status === "sending"
                   ? "Sending…"
-                  : "Send Message"}
-              <Send
-                size={16}
-                className="group-hover:translate-x-1 transition-transform"
-              />
+                  : "Send message"}
+              <Send size={16} />
             </button>
           </motion.form>
         </div>

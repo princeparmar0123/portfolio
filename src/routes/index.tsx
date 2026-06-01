@@ -50,22 +50,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Premium Flutter, Android & cross-platform mobile development. View projects, experience and get in touch.",
-      },
-    ],
-    links: [
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossOrigin: "anonymous",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+          "Flutter, Android & cross-platform mobile development. View projects, experience and get in touch.",
       },
     ],
   }),
@@ -73,7 +58,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="relative min-h-screen bg-app text-foreground overflow-x-hidden">
+    <main className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Hero />
       <Suspense fallback={null}>

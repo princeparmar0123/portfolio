@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { ArrowRight, Download, Sparkles } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 const titles = [
   "Flutter Developer",
@@ -11,122 +11,109 @@ const titles = [
 
 export function Hero() {
   const [idx, setIdx] = useState(0);
+
   useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % titles.length), 2200);
+    const t = setInterval(() => setIdx((i) => (i + 1) % titles.length), 2800);
     return () => clearInterval(t);
   }, []);
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24"
+      className="relative border-b border-border pt-28 pb-20 sm:pt-32 sm:pb-28"
     >
-      {/* Animated blobs */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 -left-20 w-[28rem] h-[28rem] bg-[oklch(0.5_0.25_290)] rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-blob" />
-        <div className="absolute top-1/3 -right-20 w-[28rem] h-[28rem] bg-[oklch(0.5_0.25_240)] rounded-full mix-blend-screen filter blur-[120px] opacity-40 animate-blob [animation-delay:-6s]" />
-        <div className="absolute bottom-0 left-1/3 w-[24rem] h-[24rem] bg-[oklch(0.55_0.22_310)] rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob [animation-delay:-12s]" />
-      </div>
-
-      {/* Grid pattern */}
       <div
-        className="absolute inset-0 -z-10 opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 opacity-100"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
+          backgroundImage: `linear-gradient(var(--hero-grid) 1px, transparent 1px), linear-gradient(90deg, var(--hero-grid) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
           maskImage:
-            "radial-gradient(ellipse at center, black 40%, transparent 75%)",
+            "linear-gradient(to bottom, black 0%, transparent 85%)",
         }}
       />
 
-      <div className="mx-auto max-w-5xl px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs sm:text-sm text-muted-foreground mb-8"
-        >
-          <Sparkles size={14} className="text-[oklch(0.75_0.2_290)]" />
-          Open to full-time job opportunities
-        </motion.div>
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6">
+        <div className="max-w-3xl">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground"
+          >
+            <span className="size-1.5 rounded-full bg-primary" />
+            Open to full-time opportunities
+          </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-5xl sm:text-7xl md:text-8xl font-bold leading-[1.05] tracking-tight"
-        >
-          <span className="block text-white/90">Prince</span>
-          <span className="block text-gradient">Parmar</span>
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-4xl font-semibold leading-[1.1] tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+          >
+            Prince Parmar
+          </motion.h1>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-6 h-9 sm:h-10 relative overflow-hidden"
-        >
-          {titles.map((t, i) => (
-            <motion.p
-              key={t}
-              initial={false}
-              animate={{
-                y: i === idx ? 0 : i < idx ? -40 : 40,
-                opacity: i === idx ? 1 : 0,
-              }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="absolute inset-0 text-lg sm:text-2xl font-medium text-white/80"
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.15 }}
+            className="relative mt-4 h-8 overflow-hidden sm:h-9"
+          >
+            {titles.map((t, i) => (
+              <motion.p
+                key={t}
+                initial={false}
+                animate={{
+                  y: i === idx ? 0 : i < idx ? -32 : 32,
+                  opacity: i === idx ? 1 : 0,
+                }}
+                transition={{ duration: 0.45, ease: "easeInOut" }}
+                className="absolute text-lg font-medium text-accent sm:text-xl"
+              >
+                {t}
+              </motion.p>
+            ))}
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+          >
+            I build reliable mobile products for startups and enterprise teams —
+            with <span className="font-medium text-foreground">4+ years</span>{" "}
+            shipping Flutter and native Android apps end to end.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.35 }}
+            className="mt-10 flex flex-wrap gap-3"
+          >
+            <a href="#projects" className="btn-primary">
+              View projects
+              <ArrowRight size={16} />
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              download
+              className="btn-secondary"
             >
-              {t}
-            </motion.p>
-          ))}
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-8 mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
-        >
-          Mobile App Developer with{" "}
-          <span className="text-white font-semibold">4+ years</span> of
-          experience building scalable enterprise and startup applications.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center flex-wrap"
-        >
-          <a
-            href="#projects"
-            className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-primary text-white font-medium glow-purple hover:scale-105 transition-all"
-          >
-            View Projects
-            <ArrowRight
-              size={18}
-              className="group-hover:translate-x-1 transition-transform"
-            />
-          </a>
-          <a
-            href={`${import.meta.env.BASE_URL}resume.pdf`}
-            download
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-strong text-white font-medium hover:bg-white/10 transition-all"
-          >
-            <Download size={18} />
-            Download Resume
-          </a>
-          <a
-            href={`${import.meta.env.BASE_URL}portfolio.pdf`}
-            download
-            className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl glass-strong text-white font-medium hover:bg-white/10 transition-all"
-          >
-            <Download size={18} />
-            Download Portfolio
-          </a>
-        </motion.div>
+              <Download size={16} />
+              Resume
+            </a>
+            <a
+              href={`${import.meta.env.BASE_URL}portfolio.pdf`}
+              download
+              className="btn-secondary"
+            >
+              <Download size={16} />
+              Portfolio PDF
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

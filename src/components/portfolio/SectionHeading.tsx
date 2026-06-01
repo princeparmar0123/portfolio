@@ -4,27 +4,31 @@ export function SectionHeading({
   eyebrow,
   title,
   subtitle,
+  align = "left",
 }: {
   eyebrow: string;
   title: string;
   subtitle?: string;
+  align?: "left" | "center";
 }) {
+  const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
+
   return (
-    <div className="text-center max-w-2xl mx-auto mb-16">
-      <motion.span
-        initial={{ opacity: 0, y: 10 }}
+    <div className={`mb-12 max-w-2xl ${alignClass}`}>
+      <motion.p
+        initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        className="inline-block text-xs uppercase tracking-[0.2em] text-[oklch(0.75_0.2_290)] mb-3"
+        viewport={{ once: true, margin: "-80px" }}
+        className="text-xs font-semibold uppercase tracking-widest text-primary"
       >
         {eyebrow}
-      </motion.span>
+      </motion.p>
       <motion.h2
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ delay: 0.1 }}
-        className="text-4xl sm:text-5xl font-bold text-white"
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ delay: 0.05 }}
+        className="mt-2 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
       >
         {title}
       </motion.h2>
@@ -32,9 +36,9 @@ export function SectionHeading({
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ delay: 0.2 }}
-          className="mt-4 text-muted-foreground"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ delay: 0.1 }}
+          className="mt-3 text-muted-foreground"
         >
           {subtitle}
         </motion.p>
