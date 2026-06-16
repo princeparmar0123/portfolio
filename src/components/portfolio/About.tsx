@@ -36,15 +36,20 @@ export function About() {
             className="card-surface lg:col-span-3 p-8 sm:p-10"
           >
             <p className="text-lg leading-relaxed text-foreground">
-              I'm a{" "}
-              <span className="font-semibold text-accent">mobile developer</span>{" "}
-              with 4+ years building Flutter and native Android apps for startups
-              and enterprise clients.
+              I'm an{" "}
+              <span className="font-semibold text-primary">
+                Android & Flutter developer
+              </span>{" "}
+              with 4+ years of experience shipping mobile apps for startups and
+              enterprise clients — not limited to one stack; I work across both
+              native Android and Flutter based on product needs.
             </p>
             <p className="mt-5 leading-relaxed text-muted-foreground">
-              I work across Flutter, Kotlin, Firebase, REST APIs, payments,
-              real-time messaging, and store releases — from architecture through
-              production support.
+              <span className="font-medium text-foreground">Android:</span>{" "}
+              Kotlin, Jetpack Compose, MVVM, Play Store releases.{" "}
+              <span className="font-medium text-foreground">Flutter:</span>{" "}
+              Dart, iOS & Android from one codebase, Firebase, REST APIs,
+              payments, real-time features, and App Store deployments.
             </p>
           </motion.div>
 

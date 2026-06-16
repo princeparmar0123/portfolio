@@ -40,17 +40,20 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Prince Parmar — Flutter & Mobile App Developer" },
+      { title: "Prince Parmar — Android & Flutter Developer" },
       {
         name: "description",
         content:
-          "Prince Parmar — Flutter Developer with 4+ years building scalable mobile and web applications for startups and enterprise clients.",
+          "Prince Parmar — Android & Flutter developer with 4+ years building production mobile apps. Kotlin, Jetpack Compose, Dart, Firebase, payments, Play Store & App Store.",
       },
-      { property: "og:title", content: "Prince Parmar — Flutter Developer" },
+      {
+        property: "og:title",
+        content: "Prince Parmar — Android & Flutter Developer",
+      },
       {
         property: "og:description",
         content:
-          "Flutter, Android & cross-platform mobile development. View projects, experience and get in touch.",
+          "4+ years in Android and Flutter. Native Kotlin apps and cross-platform Flutter — view projects, experience, and get in touch.",
       },
     ],
   }),

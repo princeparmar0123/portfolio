@@ -14,13 +14,13 @@ import { SectionHeading } from "./SectionHeading";
 const services = [
   {
     icon: Smartphone,
-    title: "Flutter development",
-    desc: "Cross-platform apps with a native feel.",
+    title: "Flutter & Android development",
+    desc: "Cross-platform Flutter and native Kotlin apps.",
   },
   {
     icon: AppWindow,
-    title: "Android development",
-    desc: "Kotlin and Jetpack for modern Android.",
+    title: "Native Android",
+    desc: "Kotlin, Jetpack Compose, and MVVM architecture.",
   },
   {
     icon: Layers,

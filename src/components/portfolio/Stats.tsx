@@ -8,7 +8,7 @@ import {
 import { useEffect, useRef } from "react";
 
 const stats = [
-  { value: 4, suffix: "+", label: "Years experience" },
+  { value: 4, suffix: "+", label: "Years in Android & Flutter" },
   { value: 30, suffix: "+", label: "Projects delivered" },
   { value: 10, suffix: "+", label: "Technologies" },
   { value: 100, suffix: "%", label: "Client satisfaction" },

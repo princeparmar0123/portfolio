@@ -6,7 +6,7 @@ export function Footer() {
           © {new Date().getFullYear()} Prince Parmar
         </p>
         <p className="text-xs text-muted-foreground">
-          Mobile development · Flutter & Android
+          Android & Flutter · 4+ years mobile development
         </p>
       </div>
     </footer>

@@ -67,17 +67,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Prince Parmar — Mobile App Developer" },
+      { title: "Prince Parmar — Android & Flutter Developer" },
       {
         name: "description",
         content:
-          "Prince Parmar — Flutter & Android developer building scalable mobile apps for startups and enterprise.",
+          "Prince Parmar — Android & Flutter developer with 4+ years building production mobile apps for startups and enterprise.",
       },
-      { property: "og:title", content: "Prince Parmar — Mobile App Developer" },
+      {
+        property: "og:title",
+        content: "Prince Parmar — Android & Flutter Developer",
+      },
       {
         property: "og:description",
         content:
-          "Portfolio of Prince Parmar. Flutter, Kotlin, Firebase, and cross-platform mobile development.",
+          "4+ years across Android (Kotlin) and Flutter (Dart). Portfolio, projects, and contact.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

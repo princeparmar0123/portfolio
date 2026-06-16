@@ -128,7 +128,7 @@ export function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Shipped products"
-          subtitle="Apps I've built or contributed to — live on stores and in production."
+          subtitle="Flutter and Android apps I've built — live on Play Store, App Store, and in production."
         />
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((p, i) => (

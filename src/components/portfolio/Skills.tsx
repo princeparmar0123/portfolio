@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 const skillGroups = [
   {
     title: "Mobile",
-    description: "Cross-platform and native Android",
+    description: "Flutter and native Android (Kotlin)",
     skills: [
       "Flutter",
       "Dart",
@@ -43,7 +43,7 @@ export function Skills() {
         <SectionHeading
           eyebrow="Tech stack"
           title="Tools I work with"
-          subtitle="Grouped by what I use most often on real projects."
+          subtitle="Android and Flutter tools I use on production apps."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -86,9 +86,9 @@ export function Skills() {
             Core focus
           </p>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            <span className="font-medium text-foreground">Flutter</span>
+            <span className="font-medium text-foreground">Android (Kotlin)</span>
             {" · "}
-            <span className="font-medium text-foreground">Kotlin</span>
+            <span className="font-medium text-foreground">Flutter (Dart)</span>
             {" · "}
             <span className="font-medium text-foreground">Firebase</span>
             {" · "}

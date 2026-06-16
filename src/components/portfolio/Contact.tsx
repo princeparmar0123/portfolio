@@ -105,7 +105,7 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title="Let's work together"
-          subtitle="Open to full-time roles and product-focused opportunities."
+          subtitle="Open to Android, Flutter, and mobile engineering roles."
         />
         <div className="grid gap-6 lg:grid-cols-5">
           <motion.div

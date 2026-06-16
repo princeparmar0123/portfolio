@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Download } from "lucide-react";
 
 const titles = [
-  "Flutter Developer",
+  "Android & Flutter Developer",
   "Mobile App Developer",
-  "Android Developer",
-  "Cross-Platform Engineer",
+  "Kotlin & Flutter Engineer",
+  "Cross-Platform Mobile Developer",
 ];
 
 export function Hero() {
@@ -41,7 +41,7 @@ export function Hero() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground"
           >
             <span className="size-1.5 rounded-full bg-primary" />
-            Open to full-time opportunities
+            Open to Android & Flutter roles · 4+ years
           </motion.p>
 
           <motion.h1
@@ -81,9 +81,11 @@ export function Hero() {
             transition={{ delay: 0.25 }}
             className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            I build reliable mobile products for startups and enterprise teams —
-            with <span className="font-medium text-foreground">4+ years</span>{" "}
-            shipping Flutter and native Android apps end to end.
+            Android & Flutter developer with{" "}
+            <span className="font-medium text-foreground">4+ years</span> of
+            experience building production apps for startups and enterprise
+            teams — native Android (Kotlin) and cross-platform Flutter, from
+            architecture through Play Store and App Store release.
           </motion.p>
 
           <motion.div

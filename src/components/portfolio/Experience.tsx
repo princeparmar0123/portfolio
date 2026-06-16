@@ -4,18 +4,18 @@ import { SectionHeading } from "./SectionHeading";
 const experience = [
   {
     company: "Biztoso Technology Private Limited",
-    role: "Mobile App Developer",
+    role: "Android & Flutter Developer",
     duration: "Oct 2025 – Present",
     current: true,
     points: [
-      "Developed scalable Android applications using Kotlin and MVVM.",
+      "Lead Android development with Kotlin, MVVM, and Jetpack Compose.",
       "Integrated real-time chat and analytics systems.",
       "Worked with enterprise architecture and Jetpack components.",
     ],
   },
   {
     company: "Saturncube Technology",
-    role: "Mobile App Developer",
+    role: "Android & Flutter Developer",
     duration: "Nov 2024 – Oct 2025",
     points: [
       "Built scalable Flutter applications.",
@@ -25,7 +25,7 @@ const experience = [
   },
   {
     company: "Myriad Solution",
-    role: "Mobile App Developer",
+    role: "Android & Flutter Developer",
     duration: "Aug 2023 – Aug 2024",
     points: [
       "Developed Flutter apps for Android and iOS.",
@@ -35,7 +35,7 @@ const experience = [
   },
   {
     company: "iAppstack Solution",
-    role: "Mobile App Developer",
+    role: "Android & Flutter Developer",
     duration: "Jan 2022 – Mar 2023",
     points: [
       "Built scalable Flutter applications.",
@@ -52,7 +52,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Where I've worked"
-          subtitle="Four years across product teams, agencies, and startups."
+          subtitle="4+ years across Android and Flutter roles at product teams, agencies, and startups."
         />
 
         <div className="relative">
